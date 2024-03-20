@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <!-- ^========|> Favicon  -->
+    <link rel="icon" href />
+    <!-- ^========|> Lora Font  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet">
+    <!-- *========|> Font awesome library -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- *========|> Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- *========|> Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="bookmark-body  d-flex flex-column align-items-center ">
+      <div class="header"><h1 class="my-5 header-h1">Bookmarker</h1></div>
+      <section class="container hero ">
+        <h2 class="text-center my-5 fs-4"><i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i></h2>
+        <form>
+          <div class="mb-3 ptsans">
+            <label for="exampleInputEmail1" class="form-label fw-bold ">
+              <i class="fa-solid fa-floppy-disk"></i>
+              Site Name
+            </label>
+            <input type="text" class="form-control"
+              id="Name" oninput="Validate(nameRegex , Name)"
+              aria-describedby="emailHelp" placeholder="Bookmarker Name">
+
+          </div>
+          <div class="mb-3 ptsans">
+            <label for="exampleInputEmail1" class="form-label fw-bold"><i
+                class="fa-solid fa-link"></i> Site URL
+            </label>
+            <input type="text" class="form-control"
+              id="Url"
+              oninput="Validate(urlRegex , Url)"
+              aria-describedby="emailHelp" placeholder="Website URl">
+          </div>
+          <div class="button d-flex justify-content-center align-items-center mb-3">
+            <button type="button" class="btn btn-danger px-5"
+              onclick="addproduct()"
+              id="alertBtn">Submit</button>
+          </div>
+          <div id="alert" class="alert">
+            <div class="alert-content ms-3">
+              <div class="part1">
+                <i class="fa-solid fa-circle" style="color: #00a303;"></i>
+                <i class="fa-solid fa-circle" style="color: #ffe380;"></i>
+                <i class="fa-solid fa-circle" style="color: #e60000;"></i>
+                <span class="close position-relative ">
+                  <button class="bg-transparent border-0 closeBtn" id="close">
+                    <i class="fa-regular fa-circle-xmark"
+                      style="color: #511f1f;"></i>
+                  </button>
+                </span>
+              </div>
+              <p class="ptsans">Site Name or Url is not valid, Please follow the rules below
+                :</p>
+              <div class="rule1 d-flex">
+                <i class="fa-regular fa-circle-right fs-3"
+                  style="color: #e10505;"></i>
+                <h3 class="fs-4 ptsans">Site name must contain at least 3 characters
+                </h3>
+              </div>
+              <div class="rule2 d-flex">
+                <i class="fa-regular fa-circle-right fs-3"
+                  style="color: #e10505;"></i>
+                <h3 class="fs-4 ptsans">Site URL must be a valid one</h3>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </section>
+      <table class="table mt-4 text-center bg-light container">
+        <thead>
+          <tr>
+            <td class="text-capitalize ptsans">index</td>
+            <td class="text-capitalize ptsans">website name</td>
+            <td class="text-capitalize ptsans">visit</td>
+            <td class="text-capitalize ptsans">delete</td>
+          </tr>
+        </thead>
+        <tbody id="displayProduct">
+        </tbody>
+      </table>
+    </main>
+    <!-- ?========|> Boostrap Js file -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- ?========|> Main Js File -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
